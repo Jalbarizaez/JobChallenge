@@ -1,0 +1,14 @@
+version: "1"
+services:
+  app:
+    build: .
+    depends_on:
+      - postgres
+    ports:
+      - "3000:3000"
+      - "9229:9229"
+
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: postgres
